@@ -3,7 +3,8 @@
 - The website idea I went with is going to be a dream team creator for F1 drivers. The Full Men CRUD stack will include creating, editing, getting and deleting teams and drivers. The website will provide each unique user with a view of the teams they created. Additionally, showing the race track information and driver information
 
 # Wireframe - Initial Landing (index)
-![[Pasted image 20250331155520.png]]
+![dummy](https://github.com/user-attachments/assets/330a9bbd-63fd-479f-95ec-837b68d9bee2)
+
 
 # Wireframe - logged in dashboard
 ![[Pasted image 20250331155538.png]]
