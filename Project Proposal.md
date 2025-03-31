@@ -32,7 +32,8 @@
 
 
 # ERD
-![[F1 Project ERD.png]]
+![dummy](https://github.com/user-attachments/assets/800f2571-2dcc-4306-911f-5b60a2df5ac4)
+
 
 
 # User stories
