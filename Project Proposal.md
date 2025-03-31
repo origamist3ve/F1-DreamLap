@@ -7,21 +7,26 @@
 
 
 # Wireframe - logged in dashboard
-![[Pasted image 20250331155538.png]]
+![dummy](https://github.com/user-attachments/assets/32731e2a-c2fa-4439-93bd-e7436abda774)
+
 
 # Wireframe - Creating team
-![[Pasted image 20250331155557.png]]
+![dummy](https://github.com/user-attachments/assets/2d71f3a8-34f7-467c-94e7-6a4d4cf87e84)
+
 
 # Wireframe - Separate team view with delete and edit
-![[Pasted image 20250331155622.png]]
+![dummy](https://github.com/user-attachments/assets/7b554ca8-c248-47d0-81f2-5d56480f7d86)
+
 
 
 # Wireframe - Driver information page
-![[Pasted image 20250331155630.png]]
+![dummy](https://github.com/user-attachments/assets/025843c6-3447-4d68-8221-7ee2514a24b1)
+
 
 
 # Wireframe - Race information page
-![[Pasted image 20250331155637.png]]
+![dummy](https://github.com/user-attachments/assets/4ba63d5d-b664-48c6-a7ad-5a0387c57f94)
+
 
 
 
