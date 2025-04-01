@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/origamist3ve/F1-DreamLap#readme",
   "dependencies": {
+    "bcrypt": "^5.1.1",
     "dotenv": "^16.4.7",
     "express": "^5.1.0",
     "express-session": "^1.18.1",

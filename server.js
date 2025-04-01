@@ -9,7 +9,10 @@ import path from "path";
 
 import "./db/connections.js"
 
-// import autController from "./controllers/auth.js"
+import authController from "./controllers/auth.js";
+import dashboardController from "./controllers/dashboard.js"
+import { isSignedIn } from "./middleware/isSignedIn.js";
+
 import {fileURLToPath} from "url";
 
 const port = process.env.PORT ? process.env.PORT : '3000';
@@ -30,6 +33,16 @@ app.use(
         saveUninitialized: true,
     })
 );
+
+app.get("/", (req, res) => {
+    res.render("index.ejs", {
+        user: req.session.user
+    });
+})
+
+app.use('/auth', authController)
+app.use('/dashboard', dashboardController)
+app.use(isSignedIn)
 
 
 app.listen(port, () => {
