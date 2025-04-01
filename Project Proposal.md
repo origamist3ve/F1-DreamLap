@@ -122,6 +122,25 @@
 
 ```
 
+# Routes
+Route	Method	Description	Protected?
+/	GET	Show the landing page	No
+/register	GET	Show user registration form	No
+/register	POST	Register a new user	No
+/login	GET	Show login form	No
+/login	POST	Authenticate user & start session	No
+/logout	GET	Log out and destroy session	Yes
+/dashboard	GET	Show user’s teams	Yes
+/dashboard/teams/new	GET	Show form to create a team	Yes
+/dashboard/teams	POST	Create a new team	Yes
+/dashboard/teams/:teamId	GET	View team details	Yes
+/dashboard/teams/:teamId/edit	GET	Show edit form for team	Yes
+/dashboard/teams/:teamId	PUT	Update team details	Yes
+/dashboard/teams/:teamId	DELETE	Delete a team	Yes
+/dashboard/drivers/:driverId	GET	View driver details (read-only)	Yes
+/dashboard/races/:raceId	GET	View race details (read-only)	Yes
+
+
 
 
 # Timeline
