@@ -10,11 +10,14 @@
 <body>
     <h1> Welcome to your Teams Dashboard</h1>
     <a class = "add-team-link" href = "/dashboard/new"> Add a team</a>
+    <a class = "add-team-link" href = "/auth/sign-out"> Sign out</a>
 
     <%teams.forEach((team)=> {%>
         <p> <%= team.name%></p>
         <%team.drivers.forEach((driver)=> {%>
-            <p> <%= driver.name %></p>
+            <a href = "/dashboard/driver/<%= driver._id %>">
+                <p> <%= driver.name %></p>
+            </a>
         <%})%>
         <%team.races.forEach((race)=> {%>
             <p> <%= race.name %></p>

@@ -29,11 +29,36 @@ router.get("/",isSignedIn, async(req, res) => {
     }
 })
 
-router.get("/new", async(req, res) => {
+router.get("/new", isSignedIn, async(req, res) => {
     const drivers = await Driver.find({});
     const races = await Race.find({});
     res.render("dashboard/new.ejs", { drivers, races });
 })
+
+
+
+
+router.get('/driver/:id', isSignedIn, async(req, res) => {
+    const id = req.params.id;
+    const drivers = await Driver.findById(id)
+
+    res.render("dashboard/showDriver.ejs", {
+        drivers
+    })
+})
+
+// router.get('/race/:id', isSignedIn, async(req, res) => {
+//     const id = req.params.id;
+//     const drivers = await Race.findById(id)
+//
+//     res.render("dashboard/showDriver.ejs", {
+//         drivers
+//     })
+// })
+
+
+
+
 
 router.post("/",isSignedIn, async(req, res) => {
     const {name, country, driver,race} = req.body;
