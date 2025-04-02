@@ -16,13 +16,20 @@
     <label for="country" name="country">Country</label>
     <input type="text" name="country" required>
     <br/>
-    <label for =engineSupplier name="engineSupplier">Engine Supplier</label>
-    <select name="engineSupplier">
-        <option value="">Select Engine Supplier</option>
-        <option value="BMW">BMW</option>
-        <option value="Lexus">Lexus</option>
+    <label for =driver name="driver">Driver</label>
+    <select name="driver">
+        <% drivers.forEach(function(driver) {%>
+            <option value="<%= driver._id%>"><%= driver.name%></option>
+        <%})%>
     </select>
-
+    <br/>
+    <label for =race name="race">Race</label>
+    <select name="race">
+        <% races.forEach(function(race) {%>
+            <option value="<%= race._id%>"><%= race.name%></option>
+        <%})%>
+    </select>
+    <button type="submit">Submit</button>
 </form>
 
 </body>

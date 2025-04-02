@@ -11,6 +11,15 @@
     <h1> Welcome to your Teams Dashboard</h1>
     <a class = "add-team-link" href = "/dashboard/new"> Add a team</a>
 
+    <%teams.forEach((team)=> {%>
+        <p> <%= team.name%></p>
+        <%team.drivers.forEach((driver)=> {%>
+            <p> <%= driver.name %></p>
+        <%})%>
+        <%team.races.forEach((race)=> {%>
+            <p> <%= race.name %></p>
+        <%})%>
+    <%})%>
 
 
 </body>

@@ -35,9 +35,15 @@ app.use(
 );
 
 app.get("/", (req, res) => {
-    res.render("index.ejs", {
-        user: req.session.user
-    });
+    if (req.session.user) {
+        res.redirect("/dashboard");
+    }
+    else {
+        res.render("index.ejs", {
+            user: req.session.user
+        });
+    }
+
 })
 
 app.use('/auth', authController)

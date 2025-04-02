@@ -1,7 +1,6 @@
 import dotenv from "dotenv";
 dotenv.config();
 import mongoose from "mongoose";
-import Driver from "../models/drivers.js";
 
 mongoose.connect(process.env.MONGODB_URI);
 
