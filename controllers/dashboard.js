@@ -64,6 +64,9 @@ router.get("/team/:id", isSignedIn, async(req, res) => {
     const id = req.params.id;
     const user = await User.findById(req.session.user);
     const teams = await Team.findById(id)
+    if (teams.user._id.toString() !== req.session.user._id) {
+        return res.status(403).send("Unauthorized: You do not have permission to edit this team.");
+    }
 
     res.render("dashboard/showTeam.ejs", {
         teams,
@@ -95,7 +98,9 @@ router.get("/team/:id/edit", isSignedIn, async(req, res) => {
     try {
         const id = req.params.id;
         const team = await Team.findById(id).populate("drivers").populate("races");
-
+        if (team.user._id.toString() !== req.session.user._id) {
+            return res.status(403).send("Unauthorized: You do not have permission to edit this team.");
+        }
         const drivers = await Driver.find({});
         const races = await Race.find({});
         const user = await User.findById(req.session.user);
