@@ -13,14 +13,18 @@
     <a class = "add-team-link" href = "/auth/sign-out"> Sign out</a>
 
     <%teams.forEach((team)=> {%>
-        <p> <%= team.name%></p>
+        <a href = "/dashboard/team/<%= team._id %>">
+            <h3> <%= team.name%></h3>
+        </a>
         <%team.drivers.forEach((driver)=> {%>
             <a href = "/dashboard/driver/<%= driver._id %>">
                 <p> <%= driver.name %></p>
             </a>
         <%})%>
         <%team.races.forEach((race)=> {%>
+            <a href = "/dashboard/race/<%= race._id %>">
             <p> <%= race.name %></p>
+            </a>
         <%})%>
     <%})%>
 

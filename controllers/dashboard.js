@@ -3,7 +3,6 @@ import Team from "../models/teams.js"
 import Driver from "../models/drivers.js"
 import Race from "../models/races.js"
 import User from "../models/user.js"
-import races from "../models/races.js";
 import {isSignedIn} from "../middleware/isSignedIn.js";
 
 
@@ -40,21 +39,94 @@ router.get("/new", isSignedIn, async(req, res) => {
 
 router.get('/driver/:id', isSignedIn, async(req, res) => {
     const id = req.params.id;
+    const user = await User.findById(req.session.user);
     const drivers = await Driver.findById(id)
 
     res.render("dashboard/showDriver.ejs", {
-        drivers
+        drivers,
+        user:user
     })
 })
 
-// router.get('/race/:id', isSignedIn, async(req, res) => {
-//     const id = req.params.id;
-//     const drivers = await Race.findById(id)
-//
-//     res.render("dashboard/showDriver.ejs", {
-//         drivers
-//     })
-// })
+router.get('/race/:id', isSignedIn, async(req, res) => {
+    const id = req.params.id;
+    const races = await Race.findById(id)
+    const user = await User.findById(req.session.user);
+
+
+    res.render("dashboard/showRace.ejs", {
+        races,
+        user:user
+    })
+})
+
+router.get("/team/:id", isSignedIn, async(req, res) => {
+    const id = req.params.id;
+    const user = await User.findById(req.session.user);
+    const teams = await Team.findById(id)
+
+    res.render("dashboard/showTeam.ejs", {
+        teams,
+        user: user
+    })
+})
+
+router.delete("/team/:id", isSignedIn, async(req, res) => {
+    try {
+        const id = req.params.id;
+        await Team.findByIdAndDelete(id)
+        const user = await User.findById(req.session.user);
+
+
+        // teams.foreach((team, index) => {
+        //     if (team._id.toString() === id) {
+        //         team.splice(index, 1);
+        //     }
+        // })
+        res.redirect("/dashboard");
+    }
+    catch(err) {
+        console.log(err);
+    }
+})
+
+
+router.get("/team/:id/edit", isSignedIn, async(req, res) => {
+    try {
+        const id = req.params.id;
+        const team = await Team.findById(id).populate("drivers").populate("races");
+
+        const drivers = await Driver.find({});
+        const races = await Race.find({});
+        const user = await User.findById(req.session.user);
+        res.render("dashboard/edit.ejs", {
+            team,
+            drivers,
+            races,
+            user: user
+        })
+
+    }
+    catch(err) {
+        console.log(err);
+
+    }
+})
+
+router.put("/team/:id", isSignedIn, async(req, res) => {
+    const id = req.params.id;
+    const {team, country, driver, race} = req.body;
+
+    const teams = await Team.findById(id)
+    teams.set({
+        name: team,
+        country,
+        drivers: driver,
+        races: race,
+    })
+    await teams.save()
+    res.redirect("/dashboard");
+})
 
 
 

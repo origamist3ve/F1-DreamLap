@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<h1>Edit <%= team.name %> Team</h1>
+<form action="/dashboard/team/<%= team.id %>?_method=PUT" method="POST">
+    <label for="team"> Name</label>
+    <input
+            type="text"
+            name="team"
+            value="<%= team.name %>"
+    />
+    <br/>
+    <label for="country">Country</label>
+    <input type="text"
+           name="country"
+           value="<%= team.country %>"
+    />
+    <br/>
+    <label for="driver">Driver</label>
+    <select name="driver">
+        <% drivers.forEach(function(driver) { %>
+            <option value="<%= driver._id %>"
+                    <%= team.drivers.some(selected => selected._id.toString() === driver._id.toString()) ? "selected" : "" %>>
+                <%= driver.name %>
+            </option>
+        <% }); %>
+    </select>
+    <br/>
+    <label for="race">Driver</label>
+    <select name="race">
+        <% races.forEach(function(race) { %>
+            <option value="<%= race._id %>"
+                    <%= team.races.some(selected => selected._id.toString() === race._id.toString()) ? "selected" : "" %>>
+                <%= race.name %>
+            </option>
+        <% }); %>
+    </select>
+    <button type="submit">Save Changes</button>
+</form>
+
+</body>
+</html>
