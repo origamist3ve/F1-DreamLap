@@ -1,3 +1,6 @@
+/*TODO Organize these styles and write down notes */
+
+
 .racing-sans-one-regular {
     font-family: "Racing Sans One", sans-serif;
     font-weight: 400;
@@ -29,9 +32,10 @@ body {
 
 
 
-/* Hero Section Styling */
+
+
+/*Title:!* Hero Section Styling *! (Inside main page "/")*/
 .hero {
-    background: url('/images/hero-background.jpg') no-repeat center center/cover; /* Replace with your hero image */
     padding: 100px 20px;
     color: #fff;
     text-align: center;
@@ -165,7 +169,7 @@ body {
 .signup-container {
     max-width: 400px;
     margin: 40px auto;
-    padding: 30px;
+    padding: 40px 50px;
     background-color: #ffffff; /* White background */
     border: 1px solid #ddd;
     border-radius: 8px;
@@ -176,7 +180,6 @@ body {
 .signup-container h1 {
     text-align: center;
     margin-bottom: 30px;
-    font-family: "Racing Sans One", sans-serif;
     font-size: 32px;
     color: #333;
 }
@@ -194,6 +197,7 @@ body {
 }
 
 .form-input {
+    justify-content: center;
     width: 100%;
     padding: 10px;
     font-size: 1rem;
