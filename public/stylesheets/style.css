@@ -4,6 +4,151 @@
     font-style: normal;
 }
 
+h1 {
+    justify-self: center;
+}
+
 body {
     font-family: "Racing Sans One", sans-serif;
 }
+
+
+
+
+/* Container for the cards */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem; /* Space between cards */
+    justify-content: center; /* Center cards horizontally */
+    padding: 1rem;
+}
+
+/* Style for each team card */
+.team-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    width: calc(33.33% - 1rem); /* Three cards per row, adjust as needed */
+    min-width: 250px; /* Ensure a minimum width for responsiveness */
+}
+
+/* Optional: Style for the details inside each card */
+.team-card h3 {
+    margin-top: 0;
+}
+
+.card-details {
+    margin-top: 1rem;
+}
+
+.card-details h4 {
+    margin: 0.5rem 0 0.25rem;
+    font-size: 1rem;
+    color: #333;
+}
+
+.card-details p {
+    margin: 0.25rem 0;
+    font-size: 0.9rem;
+}
+
+
+/* Container styling for the team card */
+.team-container {
+    background-color: #f9f9f9; /* A soft white background */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    max-width: 600px;
+    margin: 20px auto;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Team heading styling */
+.team-container h1 {
+    margin-top: 0;
+}
+
+/* Styling for the team details text */
+.team-details p {
+    margin: 0.5rem 0;
+}
+
+/* Heading styling inside the team details section */
+.team-details h3 {
+    margin: 0.5rem 0 0.25rem;
+    font-size: 1rem;
+    color: #333;
+}
+
+/* Remove list styling */
+.team-details ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+/* List item styling */
+.team-details li {
+    margin: 0.25rem 0;
+}
+
+/* Actions container styling */
+.team-actions {
+    margin-top: 20px;
+}
+
+/* Inline display for action links and forms */
+.team-actions a,
+.team-actions form {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+
+/* Container for the driver card */
+.driver-card {
+    display: flex;
+    align-items: center;
+    background-color: #f9f9f9; /* Light soft white background */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    max-width: 600px;
+    margin: 20px auto;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+
+/*title: Driver images*/
+
+/* Container for the driver image */
+.driver-image-container {
+    flex-shrink: 0;
+    margin-right: 20px;
+}
+
+/* Styling for the driver image */
+.driver-image {
+    width: 150px;
+    height: auto;
+    border-radius: 10%; /* Circular image */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Container for driver details (text) */
+.driver-details {
+    flex: 1;
+}
+
+.driver-details h1 {
+    margin-top: 0;
+}
+
+.driver-details h3 {
+    margin: 0.5rem 0;
+}
+

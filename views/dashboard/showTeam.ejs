@@ -3,24 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+          content="width=device-width, initial-scale=1.0">
+    <title>Team Details</title>
     <link rel="stylesheet" href="/public/stylesheets/style.css" />
-    <title>Teams</title>
 </head>
 <body>
-    <h1> <%= teams.name %></h1>
+<%- include('../partials/_navbar.ejs') %>
 
-    <a href="/dashboard/team/<%= teams.id %>/edit">
-        Edit
-    </a>
+<!-- Card container for the team details -->
+<div class="team-container">
+    <h1><%= teams.name %></h1>
+    <p><strong>Country:</strong> <%= teams.country %></p>
 
-    <form action="/dashboard/team/<%= teams.id %>?_method=DELETE"
-        method="POST"
-    >
-        <button type="submit">Delete</button>
-    </form>
+    <% if (teams.drivers && teams.drivers.length > 0) { %>
+        <div class="team-drivers">
+            <h3>Drivers:</h3>
+            <ul>
+                <% teams.drivers.forEach((driver) => { %>
+                    <li>
+                        <p>Name: <%= driver.name %></p>
+                        <p>Age: <%= driver.age %></p>
+                        <p>Nationality: <%= driver.nationality %></p>
+                    </li>
+                <% }); %>
+            </ul>
+        </div>
+    <% } %>
 
+    <% if (teams.races && teams.races.length > 0) { %>
+        <div class="team-races">
+            <h3>Races:</h3>
+            <ul>
+                <% teams.races.forEach((race) => { %>
+                    <li>
+                        <p><%= race.name %> - <%= race.location %></p>
+                    </li>
+                <% }); %>
+            </ul>
+        </div>
+    <% } %>
 
+    <div class="team-actions">
+        <form action="/dashboard/team/<%= teams._id %>?_method=DELETE" method="POST">
+            <button type="submit">Delete</button>
+        </form>
+        <a href="/dashboard/team/<%= teams._id %>/edit">Edit</a>
+    </div>
+</div>
 </body>
 </html>

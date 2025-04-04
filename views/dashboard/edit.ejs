@@ -20,6 +20,16 @@
             value="<%= team.name %>"
     />
     <br/>
+    <label for="engineSupplier">Engine</label>
+    <select name="engineSupplier">
+        <option value="Ferrari"  <%= team.engineSupplier === 'Ferrari' ? 'selected' : '' %>>Ferrari</option>
+        <option value="Honda" <%= team.engineSupplier === 'Honda' ? 'selected' : '' %>>Honda</option>
+        <option value="Mercedes" <%= team.engineSupplier === 'Mercedes' ? 'selected' : '' %>>Mercedes</option>
+        <option value="McLaren" <%= team.engineSupplier === 'McLaren' ? 'selected' : '' %>>McLaren</option>
+        <option value="RedBull" <%= team.engineSupplier === 'RedBull' ? 'selected' : '' %>>RedBull</option>
+        <option value="Alpine" <%= team.engineSupplier === 'Alpine' ? 'selected' : '' %>>Alpine</option>
+    </select>
+    <br/>
     <label for="country">Country</label>
     <input type="text"
            name="country"
@@ -36,7 +46,7 @@
         <% }); %>
     </select>
     <br/>
-    <label for="race">Driver</label>
+    <label for="race">Race</label>
     <select name="race">
         <% races.forEach(function(race) { %>
             <option value="<%= race._id %>"

@@ -18,6 +18,7 @@ router.get("/",isSignedIn, async(req, res) => {
         //     drivers.push(team.drivers)
         // })
         // drivers.join()
+
         res.render("dashboard/index.ejs", {
             teams,
             user: user,
@@ -54,7 +55,7 @@ router.get('/race/:id', isSignedIn, async(req, res) => {
     const user = await User.findById(req.session.user);
 
 
-    res.render("dashboard/showRace.ejs", {
+    res.render("dashboard/showRaceshowDriver.ejs", {
         races,
         user:user
     })
@@ -63,7 +64,7 @@ router.get('/race/:id', isSignedIn, async(req, res) => {
 router.get("/team/:id", isSignedIn, async(req, res) => {
     const id = req.params.id;
     const user = await User.findById(req.session.user);
-    const teams = await Team.findById(id)
+    const teams = await Team.findById(id).populate('drivers').populate('races');
     if (teams.user._id.toString() !== req.session.user._id) {
         return res.status(403).send("Unauthorized: You do not have permission to edit this team.");
     }
@@ -120,11 +121,12 @@ router.get("/team/:id/edit", isSignedIn, async(req, res) => {
 
 router.put("/team/:id", isSignedIn, async(req, res) => {
     const id = req.params.id;
-    const {team, country, driver, race} = req.body;
+    const {team, country, driver, race, engineSupplier} = req.body;
 
     const teams = await Team.findById(id)
     teams.set({
         name: team,
+        engineSupplier: engineSupplier,
         country,
         drivers: driver,
         races: race,
@@ -138,7 +140,7 @@ router.put("/team/:id", isSignedIn, async(req, res) => {
 
 
 router.post("/",isSignedIn, async(req, res) => {
-    const {name, country, driver,race} = req.body;
+    const {name, country, driver,race, engineSupplier} = req.body;
     const user = await User.findById(req.session.user._id)
     console.log(user)
 
@@ -148,6 +150,7 @@ router.post("/",isSignedIn, async(req, res) => {
         drivers: driver,
         user: req.session.user,
         races: race,
+        engineSupplier: engineSupplier,
     })
     await newTeam.save();
     res.redirect('/dashboard');

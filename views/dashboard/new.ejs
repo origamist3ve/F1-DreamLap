@@ -10,7 +10,6 @@
 </head>
 <body>
 <h1> Hello</h1>
-<%- include('../partials/_navbar.ejs') %>
 
 <form method="POST" action="/dashboard">
     <label for="name"> Team Name</label>
@@ -31,6 +30,16 @@
         <% races.forEach(function(race) {%>
             <option value="<%= race._id%>"><%= race.name%></option>
         <%})%>
+    </select>
+    <br/>
+    <label for=engineSupplier name="engineSupplier">Engine</label>
+    <select name="engineSupplier">
+        <option value="Ferrari">Ferrari</option>
+        <option value="Honda">Honda</option>
+        <option value="Mercedes">Mercedes</option>
+        <option value="McLaren">McLaren</option>
+        <option value="RedBull">Red Bull</option>
+        <option value="Alpine">Alpine</option>
     </select>
     <button type="submit">Submit</button>
 
