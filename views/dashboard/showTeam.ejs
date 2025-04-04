@@ -14,6 +14,7 @@
 <div class="team-container">
     <h1><%= teams.name %></h1>
     <p><strong>Country:</strong> <%= teams.country %></p>
+    <p><strong>Engine:</strong> <%= teams.engineSupplier %></p>
 
     <% if (teams.drivers && teams.drivers.length > 0) { %>
         <div class="team-drivers">
@@ -32,7 +33,7 @@
 
     <% if (teams.races && teams.races.length > 0) { %>
         <div class="team-races">
-            <h3>Races:</h3>
+            <h3>Race:</h3>
             <ul>
                 <% teams.races.forEach((race) => { %>
                     <li>

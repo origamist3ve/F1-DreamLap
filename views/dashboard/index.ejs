@@ -11,14 +11,12 @@
 <%- include('../partials/_navbar.ejs') %>
 
 <h1>Welcome to your Teams Dashboard</h1>
-<a class="add-team-link" href="/dashboard/new">Add a team</a>
-
 
 <!-- Card container for team cards -->
 <div class="card-container">
     <% teams.forEach((team) => { %>
         <div class="team-card">
-            <a href="/dashboard/team/<%= team._id %>">
+            <a id="display" href="/dashboard/team/<%= team._id %>">
                 <h3><%= team.name %></h3>
             </a>
             <div class="card-details">
@@ -26,19 +24,23 @@
                 <p><%= team.engineSupplier %></p>
                 <h4>Drivers:</h4>
                 <% team.drivers.forEach((driver) => { %>
-                    <a href="/dashboard/driver/<%= driver._id %>">
+                    <a id="display" href="/dashboard/driver/<%= driver._id %>">
                         <p><%= driver.name %></p>
                     </a>
                 <% }); %>
                 <h4>Races:</h4>
                 <% team.races.forEach((race) => { %>
-                    <a href="/dashboard/race/<%= race._id %>">
+                    <a id="display" href="/dashboard/race/<%= race._id %>">
                         <p><%= race.name %></p>
                     </a>
                 <% }); %>
             </div>
         </div>
     <% }); %>
+</div>
+<div class="button-container">
+    <a class="add-team-link" href="/dashboard/new">Add a team</a>
+
 </div>
 
 </body>

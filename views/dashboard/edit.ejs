@@ -3,60 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+          content="width=device-width, initial-scale=1.0">
+    <title>Edit Team</title>
     <link rel="stylesheet" href="/public/stylesheets/style.css" />
-    <title>Document</title>
 </head>
 <body>
 <%- include('../partials/_navbar.ejs') %>
 
-<h1>Edit <%= team.name %> Team</h1>
-<form action="/dashboard/team/<%= team.id %>?_method=PUT" method="POST">
-    <label for="team"> Name</label>
-    <input
-            type="text"
-            name="team"
-            value="<%= team.name %>"
-    />
-    <br/>
-    <label for="engineSupplier">Engine</label>
-    <select name="engineSupplier">
-        <option value="Ferrari"  <%= team.engineSupplier === 'Ferrari' ? 'selected' : '' %>>Ferrari</option>
-        <option value="Honda" <%= team.engineSupplier === 'Honda' ? 'selected' : '' %>>Honda</option>
-        <option value="Mercedes" <%= team.engineSupplier === 'Mercedes' ? 'selected' : '' %>>Mercedes</option>
-        <option value="McLaren" <%= team.engineSupplier === 'McLaren' ? 'selected' : '' %>>McLaren</option>
-        <option value="RedBull" <%= team.engineSupplier === 'RedBull' ? 'selected' : '' %>>RedBull</option>
-        <option value="Alpine" <%= team.engineSupplier === 'Alpine' ? 'selected' : '' %>>Alpine</option>
-    </select>
-    <br/>
-    <label for="country">Country</label>
-    <input type="text"
-           name="country"
-           value="<%= team.country %>"
-    />
-    <br/>
-    <label for="driver">Driver</label>
-    <select name="driver">
-        <% drivers.forEach(function(driver) { %>
-            <option value="<%= driver._id %>"
-                    <%= team.drivers.some(selected => selected._id.toString() === driver._id.toString()) ? "selected" : "" %>>
-                <%= driver.name %>
-            </option>
-        <% }); %>
-    </select>
-    <br/>
-    <label for="race">Race</label>
-    <select name="race">
-        <% races.forEach(function(race) { %>
-            <option value="<%= race._id %>"
-                    <%= team.races.some(selected => selected._id.toString() === race._id.toString()) ? "selected" : "" %>>
-                <%= race.name %>
-            </option>
-        <% }); %>
-    </select>
-    <button type="submit">Save Changes</button>
-</form>
+<div class="form-container">
+    <h1>Edit <%= team.name %> Team</h1>
+    <form action="/dashboard/team/<%= team._id %>?_method=PUT" method="POST">
+
+        <div class="form-group">
+            <label for="team">Team Name</label>
+            <input type="text" name="team" id="team" value="<%= team.name %>" required>
+        </div>
+
+        <div class="form-group">
+            <label for="engineSupplier">Engine</label>
+            <select name="engineSupplier" id="engineSupplier">
+                <option value="Ferrari"  <%= team.engineSupplier === 'Ferrari' ? 'selected' : '' %>>Ferrari</option>
+                <option value="Honda" <%= team.engineSupplier === 'Honda' ? 'selected' : '' %>>Honda</option>
+                <option value="Mercedes" <%= team.engineSupplier === 'Mercedes' ? 'selected' : '' %>>Mercedes</option>
+                <option value="McLaren" <%= team.engineSupplier === 'McLaren' ? 'selected' : '' %>>McLaren</option>
+                <option value="RedBull" <%= team.engineSupplier === 'RedBull' ? 'selected' : '' %>>RedBull</option>
+                <option value="Alpine" <%= team.engineSupplier === 'Alpine' ? 'selected' : '' %>>Alpine</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="country">Country</label>
+            <input type="text" name="country" id="country" value="<%= team.country %>" required>
+        </div>
+
+        <div class="form-group">
+            <label for="driver">Driver</label>
+            <select name="driver" id="driver">
+                <% drivers.forEach(function(driver) { %>
+                    <option value="<%= driver._id %>"
+                            <%= team.drivers.some(selected => selected._id.toString() === driver._id.toString()) ? 'selected' : '' %>>
+                        <%= driver.name %>
+                    </option>
+                <% }); %>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="race">Race</label>
+            <select name="race" id="race">
+                <% races.forEach(function(race) { %>
+                    <option value="<%= race._id %>"
+                            <%= team.races.some(selected => selected._id.toString() === race._id.toString()) ? 'selected' : '' %>>
+                        <%= race.name %>
+                    </option>
+                <% }); %>
+            </select>
+        </div>
+
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Save Changes</button>
+        </div>
+
+    </form>
+</div>
 
 </body>
 </html>

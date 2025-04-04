@@ -3,47 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+          content="width=device-width, initial-scale=1.0">
+    <title>Add a New Team</title>
     <link rel="stylesheet" href="/public/stylesheets/style.css" />
-    <title>Document</title>
 </head>
 <body>
-<h1> Hello</h1>
+<%- include('../partials/_navbar.ejs') %>
 
-<form method="POST" action="/dashboard">
-    <label for="name"> Team Name</label>
-    <input type="text" name="name" required>
-    <br/>
-    <label for="country" name="country">Country</label>
-    <input type="text" name="country" required>
-    <br/>
-    <label for =driver name="driver">Driver</label>
-    <select name="driver">
-        <% drivers.forEach(function(driver) {%>
-            <option value="<%= driver._id%>"><%= driver.name%></option>
-        <%})%>
-    </select>
-    <br/>
-    <label for =race name="race">Race</label>
-    <select name="race">
-        <% races.forEach(function(race) {%>
-            <option value="<%= race._id%>"><%= race.name%></option>
-        <%})%>
-    </select>
-    <br/>
-    <label for=engineSupplier name="engineSupplier">Engine</label>
-    <select name="engineSupplier">
-        <option value="Ferrari">Ferrari</option>
-        <option value="Honda">Honda</option>
-        <option value="Mercedes">Mercedes</option>
-        <option value="McLaren">McLaren</option>
-        <option value="RedBull">Red Bull</option>
-        <option value="Alpine">Alpine</option>
-    </select>
-    <button type="submit">Submit</button>
+<div class="form-container">
+    <h1>Add a New Team</h1>
+    <form method="POST" action="/dashboard">
 
-</form>
+        <div class="form-group">
+            <label for="name">Team Name</label>
+            <input type="text" name="name" id="name" required>
+        </div>
 
+        <div class="form-group">
+            <label for="country">Country</label>
+            <input type="text" name="country" id="country" required>
+        </div>
+
+        <div class="form-group">
+            <label for="driver">Driver</label>
+            <select name="driver" id="driver">
+                <% drivers.forEach(function(driver) { %>
+                    <option value="<%= driver._id %>"><%= driver.name %></option>
+                <% }); %>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="race">Race</label>
+            <select name="race" id="race">
+                <% races.forEach(function(race) { %>
+                    <option value="<%= race._id %>"><%= race.name %></option>
+                <% }); %>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="engineSupplier">Engine</label>
+            <select name="engineSupplier" id="engineSupplier">
+                <option value="Ferrari">Ferrari</option>
+                <option value="Honda">Honda</option>
+                <option value="Mercedes">Mercedes</option>
+                <option value="McLaren">McLaren</option>
+                <option value="RedBull">Red Bull</option>
+                <option value="Alpine">Alpine</option>
+            </select>
+        </div>
+
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+
+    </form>
+</div>
 </body>
 </html>

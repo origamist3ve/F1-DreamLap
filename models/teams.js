@@ -11,7 +11,7 @@ const TeamSchema = new mongoose.Schema({
     },
     engineSupplier: {
         type: String,
-        enum:["Ferrari", "Honda", "Mercedes", "Red Bull", "Mercedes", "Renault", "Alpine","McLaren" ]
+        enum:["Ferrari", "Honda", "Mercedes", "RedBull", "Mercedes", "Renault", "Alpine","McLaren" ]
     },
     drivers: [{
         type: mongoose.Schema.Types.ObjectId, ref: "Driver",

@@ -32,7 +32,8 @@ router.get("/",isSignedIn, async(req, res) => {
 router.get("/new", isSignedIn, async(req, res) => {
     const drivers = await Driver.find({});
     const races = await Race.find({});
-    res.render("dashboard/new.ejs", { drivers, races });
+    const user = await User.findById(req.session.user);
+    res.render("dashboard/new.ejs", { drivers, races, user });
 })
 
 
@@ -55,7 +56,7 @@ router.get('/race/:id', isSignedIn, async(req, res) => {
     const user = await User.findById(req.session.user);
 
 
-    res.render("dashboard/showRaceshowDriver.ejs", {
+    res.render("dashboard/showRace.ejs", {
         races,
         user:user
     })

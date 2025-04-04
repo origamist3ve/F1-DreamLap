@@ -2,12 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Race Details</title>
+    <link rel="stylesheet" href="/public/stylesheets/style.css" />
 </head>
 <body>
-<h1> <%= races.name %></h1>
+<%- include('../partials/_navbar.ejs') %>
+<div class="race-card">
+    <div class="race-details">
+        <h1><%= races.name %></h1>
+        <p><strong>Location:</strong> <%= races.location %></p>
+    </div>
+    <div class="race-image-container">
+        <img src="/images/races/<%= races.name %>.jpg" alt="<%= races.name %>" class="race-image" />
+    </div>
+</div>
 </body>
 </html>
