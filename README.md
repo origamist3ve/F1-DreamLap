@@ -1,7 +1,8 @@
 # F1-DreamLap
 
 ## Screenshot
-![Uploading Screenshot 2025-04-06 at 5.53.56 PM.png…]()
+<img width="1365" alt="Screenshot 2025-04-06 at 5 53 56 PM" src="https://github.com/user-attachments/assets/6abb84f9-391b-4956-8ab4-739304441200" />
+
 
 
 
