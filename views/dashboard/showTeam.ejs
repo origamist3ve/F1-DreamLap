@@ -45,11 +45,12 @@
     <% } %>
 
     <div class="team-actions">
-        <form action="/dashboard/team/<%= teams._id %>?_method=DELETE" method="POST">
-            <button type="submit">Delete</button>
+        <form action="/dashboard/team/<%= teams._id %>?_method=DELETE" method="POST" class="action-form">
+            <button type="submit" class="btn btn-danger">Delete</button>
         </form>
-        <a href="/dashboard/team/<%= teams._id %>/edit">Edit</a>
+        <a href="/dashboard/team/<%= teams._id %>/edit" class="btn btn-secondary">Edit</a>
     </div>
+
 </div>
 </body>
 </html>

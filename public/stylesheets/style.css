@@ -32,6 +32,25 @@ body {
 
 
 
+.signin-container {
+    max-width: 400px;
+    margin: 40px auto; /* Centers the container on the page */
+    padding: 50px ;
+    background-color: #ffffff; /* White background */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Header styling for the sign in form */
+.signin-container h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-family: "Racing Sans One", sans-serif;
+    font-size: 32px;
+    color: #333;
+}
+
 
 
 /*Title:!* Hero Section Styling *! (Inside main page "/")*/
