@@ -16,6 +16,10 @@ h1 {
     justify-self: center;
 }
 
+h2{
+    justify-self: center;
+}
+
 body {
     font-family: "Racing Sans One", sans-serif;
     font-weight: 400;
@@ -55,7 +59,7 @@ body {
 
 /*Title:!* Hero Section Styling *! (Inside main page "/")*/
 .hero {
-    background: linear-gradient(to right, #FF1801, black);
+    background: linear-gradient(90deg, rgba(121,9,37,0.8477984943977591) 33%, rgba(255,36,0,0.8562018557422969) 100%);
     padding: 80px 20px;
     text-align: center;
     color: #fff;
