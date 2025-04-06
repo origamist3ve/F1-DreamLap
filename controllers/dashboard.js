@@ -83,11 +83,6 @@ router.delete("/team/:id", isSignedIn, async(req, res) => {
         const user = await User.findById(req.session.user);
 
 
-        // teams.foreach((team, index) => {
-        //     if (team._id.toString() === id) {
-        //         team.splice(index, 1);
-        //     }
-        // })
         res.redirect("/dashboard");
     }
     catch(err) {

@@ -2,10 +2,19 @@
 
 <nav id="navbar">
     <% if(user) { %>
-        <a href="/">Your Teams</a>
-        <a href="/auth/sign-out">Sign Out</a>
+        <div class="nav-left">
+            <a href="/">Your Teams</a>
+            <a href="/auth/sign-out">Sign Out</a>
+        </div>
     <% } else { %>
-        <a href="/auth/sign-in">Sign In</a>
-        <a href="/auth/sign-up">Sign Up</a>
+        <div class="nav-left">
+            <a href="/auth/sign-in">Sign In</a>
+            <a href="/auth/sign-up">Sign Up</a>
+        </div>
     <% } %>
+    <div class="nav-right">
+        <div class="nav-logo f1-dreamlap-logo">
+            F1 DreamLap
+        </div>
+    </div>
 </nav>

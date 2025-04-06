@@ -2,8 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Team</title>
     <link rel="stylesheet" href="/public/stylesheets/style.css" />
 </head>
@@ -40,8 +39,7 @@
             <label for="driver">Driver</label>
             <select name="driver" id="driver">
                 <% drivers.forEach(function(driver) { %>
-                    <option value="<%= driver._id %>"
-                            <%= team.drivers.some(selected => selected._id.toString() === driver._id.toString()) ? 'selected' : '' %>>
+                    <option value="<%= driver._id %>" <%= team.drivers.some(selected => selected._id.toString() === driver._id.toString()) ? 'selected' : '' %>>
                         <%= driver.name %>
                     </option>
                 <% }); %>
@@ -52,8 +50,7 @@
             <label for="race">Race</label>
             <select name="race" id="race">
                 <% races.forEach(function(race) { %>
-                    <option value="<%= race._id %>"
-                            <%= team.races.some(selected => selected._id.toString() === race._id.toString()) ? 'selected' : '' %>>
+                    <option value="<%= race._id %>" <%= team.races.some(selected => selected._id.toString() === race._id.toString()) ? 'selected' : '' %>>
                         <%= race.name %>
                     </option>
                 <% }); %>
@@ -66,6 +63,5 @@
 
     </form>
 </div>
-
 </body>
 </html>
