@@ -11,6 +11,8 @@ Welcome to F1 DreamLap, here you can build your own F1 fantasy dream team. You'l
 
 
 
+## Tech Stack
+- Trello
 
 
 
