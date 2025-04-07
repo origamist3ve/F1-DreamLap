@@ -60,7 +60,9 @@ Future enhancements include a community page for exploring other users' teams an
 - Express-Session – For session management and user authentication
 
 
-
+# Stretch Goals
+- Simulate a race for each team and provide a ranking
+- Comment and see other users teams
 
 
 
