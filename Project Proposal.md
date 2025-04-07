@@ -66,14 +66,6 @@
 - As a **user**, I want to **view all drivers in my teams** so that I can review my lineup.
     
 
-## Race Management (CRUD)
-
-- As a **user**, I want to **assign my teams to a race** so that I can see how they perform in different events.
-    
-- As a **user**, I want to **view all races** to see the upcoming and past events.
-    
-- As a **user**, I want to **remove a team from a race** if I decide they should not participate.
-    
 
 ## Display & Retrieval
 
@@ -97,6 +89,11 @@
 - As a **user**, I want to **see an image of the circuit for each race** so that I can visualize the track.
     
 - As a **user**, I want to **delete and edit drivers and races separately from the team** to have more control over my selections.
+- As a **user**, I want to **assign my teams to a race** so that I can see how they perform in different events.
+    
+- As a **user**, I want to **view all races** to see the upcoming and past events.
+    
+- As a **user**, I want to **remove a team from a race** if I decide they should not participate.
 
 
 
