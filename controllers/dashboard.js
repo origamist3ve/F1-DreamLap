@@ -138,8 +138,6 @@ router.put("/team/:id", isSignedIn, async(req, res) => {
 router.post("/",isSignedIn, async(req, res) => {
     const {name, country, driver,race, engineSupplier} = req.body;
     const user = await User.findById(req.session.user._id)
-    console.log(user)
-
     const newTeam = new Team({
         name,
         country,
