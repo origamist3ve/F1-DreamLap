@@ -10,7 +10,7 @@ const router = express.Router();
 
 router.get("/",isSignedIn, async(req, res) => {
     try{
-        const teams = await Team.find({user: req.session.user}).populate('drivers').populate('races') //TODO: Change to find by id as to populate user unique ID
+        const teams = await Team.find({user: req.session.user}).populate('drivers').populate('races').populate("user") //TODO: Change to find by id as to populate user unique ID
         const user = await User.findById(req.session.user);
         // teams.drivers = driver
         // const drivers = [];
