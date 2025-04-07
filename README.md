@@ -40,6 +40,8 @@ Future enhancements include a community page for exploring other users' teams an
 
 - Mongoose – ODM for modeling and interacting with MongoDB
 
+- ChatGPT - Structuring the CSS for the pages
+
 **Frontend:**
 
 - EJS – Templating engine for dynamic HTML generation
