@@ -8,6 +8,9 @@ Welcome to F1 DreamLap, here you can build your own F1 fantasy dream team. You'l
 
 [Trello](https://trello.com/b/2J67dm3e/driver-card-management)
 
+# ERD
+![dummy](https://github.com/user-attachments/assets/800f2571-2dcc-4306-911f-5b60a2df5ac4)
+
 
 # Features
 User Authentication:
