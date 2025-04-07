@@ -59,7 +59,7 @@ body {
 
 /*Title:!* Hero Section Styling *! (Inside main page "/")*/
 .hero {
-    background: linear-gradient(90deg, rgba(121,9,37,0.8477984943977591) 33%, rgba(255,36,0,0.8562018557422969) 100%);
+    background: linear-gradient(90deg, rgba(5,5,6,0.7357536764705883) 32%, rgba(255,36,0,0.8618040966386554) 100%);
     padding: 80px 20px;
     text-align: center;
     color: #fff;
